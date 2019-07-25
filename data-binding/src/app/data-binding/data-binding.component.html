@@ -1,0 +1,79 @@
+<div class="container">
+    <!-- <br>
+    <section class="property-binding">
+        <article>
+            <h3>Interpolation</h3>
+            <p>String renderizada com interpolação: {{ url }}</p>
+            <p>1 + 1 é: {{ 1 + 1 }}</p>
+            <p>1 + 1 não é {{ 1 + 1 + getValue() }}</p>
+            <p>Curso de Angular e gosto do curso: {{ angularCourse &&  getLikeCourse()}}</p>
+            <img src="{{ urlImage }}">
+        </article>
+        <br>
+        <article>
+            <h3>Property Binding</h3>
+            <img [src]="urlImage">
+        </article>
+        <br>
+        <article>
+            <h3>Class and Style Binding</h3>
+            <div>Select class:
+                <select #class (change)="0">
+                    <option value="select">Select</option>
+                    <option value="alert-success">Success</option>
+                    <option value="alert-info">Info</option>
+                    <option value="alert-warning">Warning</option>
+                    <option value="alert-danger">Danger</option>
+                </select>
+                <br><br>
+                <alert type="0" class="{{ class.value }}" [style.display]="class.value != 'select' ? 'block' : 'none'">
+                    Changing with selected option.
+                </alert>
+
+                <alert type="0" [class.alert-success]="class.value == 'alert-success'"
+                    [style.display]="class.value != 'select' ? 'block' : 'none'">
+                    <strong>Well done!</strong> You successfully read this important alert message.
+                </alert>
+                <alert type="0" [class.alert-info]="class.value == 'alert-info'"
+                    [style.display]="class.value != 'select' ? 'block' : 'none'">
+                    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                </alert>
+                <alert type="0" [class.alert-warning]="class.value == 'alert-warning'"
+                    [style.display]="class.value != 'select' ? 'block' : 'none'">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </alert>
+                <alert type="0" [class.alert-danger]="class.value == 'alert-danger'"
+                    [style.display]="class.value != 'select' ? 'block' : 'none'">
+                    <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                </alert>
+
+                <alert type="0" [class.alert-danger]="class.value == 'alert-danger'"
+                    [style.display]="class.value == 'alert-danger' ? 'block' : 'none'">
+                    <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                </alert>
+            </div>
+        </article>
+    </section> -->
+    <br>
+    <section class="event-binding">
+        <article>
+            <h3>Event Binding</h3>
+            <div>
+                <button (click)="clickedButton()" type="button" class="btn btn-primary">
+                    Click here
+                </button>
+
+                <br><br>
+
+                <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="auxValue()"
+                    (keyup.enter)="saveValue(fieldInput.value)" (blur)="saveValue(fieldInput.value)" #fieldInput />
+                <p>Aux value: {{ currentInputValue }}
+                    <br>
+                    Save value: {{ saveInputValue }}</p>
+
+                <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">Hover
+                    over me</span>
+            </div>
+        </article>
+    </section>
+</div>
