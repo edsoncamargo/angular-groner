@@ -1,0 +1,32 @@
+<br>
+<section class="two-way-binding">
+    <article>
+        <h3>Two-way data binding</h3>
+        <div>
+            <!-- essa maneira de fazer é legal quando são poucos campos. -->
+            <input type="text" [value]="name" (input)="name = $event.target.value" />
+
+            <br><br>
+
+            <!-- ngModelChange já sabe como obter o valor quando colocado '$event', ele obtém a cada alteração do input -->
+            <input type="text" [ngModel]="name" (ngModelChange)="name = $event" />
+
+            <br><br>
+
+            <!-- Two-way data binding (maneira mais simplificada) -->
+            <!-- Banana in the box/Banana na caixa -->
+            <input type="text" [(ngModel)]="name" />
+
+            <br><br>
+
+            <p>You typed the name: {{ name }}</p>
+
+            <div>
+                <input type="text" [(ngModel)]="person.name" />
+                <p>The name is: {{ person.name }}</p>
+                <input type="number" [(ngModel)]="person.age" />
+                <p>The age is: {{ person.age }}</p>
+            </div>
+        </div>
+    </article>
+</section>
